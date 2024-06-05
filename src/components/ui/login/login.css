@@ -1,0 +1,19 @@
+.c-input-container{
+    position: relative;
+}
+.c-input-text{
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    padding: 0px 4px;
+    line-height: 13px;
+    left: 4%;
+}
+.c-span-spinner-parent{
+    position: relative;
+}
+.c-span-spinner-child{
+    position: absolute;
+    left: -25%;
+    transform: translateX(-50%);
+}
