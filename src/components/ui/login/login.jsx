@@ -26,12 +26,8 @@ const Login = () => {
         }
     }, [emailError, passwError]);
 
-    function printStuff(){
-        console.log("loading: " + loading);
-        console.log("isDisabled: " + isDisabled);
-    }
-
-    async function handleLoginSubmit(){
+    async function handleLoginSubmit(e){
+        e.preventDefault();
         const email = refs.emailRef.current.value;
         const password = refs.passRef.current.value;
 
@@ -158,11 +154,11 @@ const Login = () => {
                 </div>
                 {/* Boton */}
                 <div>
-                    <LoginButton loading={loading} enabled={isDisabled} handleLoginSubmit={handleLoginSubmit}></LoginButton>
+                    <LoginButton loading={loading} isDisabled={isDisabled} setEnabled={setIsDisabled} handleLoginSubmit={handleLoginSubmit}></LoginButton>
                 </div>
             </form>
 
-            <p className="mt-5 text-center text-sm text-gray-500"> Todavía no te uniste?
+            <p className="mt-4 text-center text-sm text-gray-500"> Todavía no te uniste?
                 <Link href={'/crearCuenta'} className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"> Crear una cuenta</Link>
             </p>
         </div>
