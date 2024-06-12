@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from 'react';
 import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 import LoginButton from './loginButton';
+import { redirect } from 'next/dist/server/api-utils';
 
 const Login = () => {
     const [loading, setLoading] = useState(false);
@@ -43,6 +44,7 @@ const Login = () => {
                 console.log(responseNextAuth);
                 //sessionStorage.settItem("sessionUser", responseNextAuth)
                 // Handle if it's right
+                redirect(`/`);
             }else{
                 if(responseNextAuth.error === 'fetch failed'){
                     showErrorMessage('El servidor no envió una respuesta.')
@@ -51,6 +53,7 @@ const Login = () => {
                 }
             }
         } catch (error) {
+            console.log(error);
             showErrorMessage('Ocurrió un error en el servidor');
         }finally{
             setLoading(false);

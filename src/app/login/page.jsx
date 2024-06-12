@@ -1,6 +1,5 @@
-import Navbar from '@/components/layout/navbar/navbar';
-import Login from '@/components/ui/login';
-import React from 'react';
+import Login from "@/components/ui/login/login";
+
 
 const Page = () => {
     return (

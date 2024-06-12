@@ -7,7 +7,13 @@ const LoginButton = ({ loading, isDisabled, handleLoginSubmit }) => {
     return (
         <button type="submit" disabled={isDisabled} onClick={handleLoginSubmit} className={( !loading && !isDisabled ) ? enabledClasses : disabledClasses}>
             {!loading && <>Iniciar sesión</>}
-            {loading && <span className="c-span-spinner-parent">Cargando<span className="c-span-spinner-child"><Spinner/></span></span>}
+            {loading && 
+                <span className="c-span-spinner-parent"> Cargando
+                    <span className="c-span-spinner-child">
+                        <Spinner/>
+                    </span>
+                </span>
+            }
         </button>
     );
 }

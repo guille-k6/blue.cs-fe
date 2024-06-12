@@ -7,12 +7,7 @@ import Navbar from "@/components/layout/navbar/navbar";
 export default function Home() {
   return (
     <main className="">
-      {/* <Link></Link>
-      <Link></Link>
-      <Link></Link>
-      <Link></Link> */}
-      <Navbar></Navbar>
-      <Login></Login>
+      <p>Home</p>
     </main>
   );
 }
